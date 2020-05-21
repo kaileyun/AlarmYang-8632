@@ -1,0 +1,24 @@
+Question list
+
+1) 
+The notification 'fault-inventory-change' does not have any statements such as leafs or uses.
+I guess that it may contain the list 'alarm-inventory' included in the container 'alarms'.
+The notification 'fault-inventory-change' is sent when the inventory is changed.
+
+2)
+leaf will-clear 삭제: 1052, alarm은 조치를 하면 clear 될 수 있지만, faut의 경우에는 fault를 조치하는것이 아니므로 해당 사항이 없음.
+leaf-list severity-level 삭제: 1071
+
+Alarm state <=> Proper action
+Fault state <=> Recovery action
+
+Alarm의 경우에는 action에 의하여 alarm 상태가 변함.
+반면에 fault는 recovery action에 의하여 fault 상태가 변함이 없음.
+발생된 fault에 따라서 recovery가 되었는지 되지 않았는지 표시 필요. 
+따라서 다음과 같이 4가지 경우가 될 수 있음.
+
+fault 상태 -> recovery 처리 (정상처리)
+fault 상태 -> recovery 처리하지 못함.(이유 필요) QoS를 만족하는 우회 경로를 찾지 못함.
+fault 해제 -> recovery 처리
+fault 해제 -> recovery 처리 못함
+
