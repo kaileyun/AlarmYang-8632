@@ -17,8 +17,17 @@ Alarm의 경우에는 action에 의하여 alarm 상태가 변함.
 발생된 fault에 따라서 recovery가 되었는지 되지 않았는지 표시 필요. 
 따라서 다음과 같이 4가지 경우가 될 수 있음.
 
-fault 상태 -> recovery 처리 (정상처리)
-fault 상태 -> recovery 처리하지 못함.(이유 필요) QoS를 만족하는 우회 경로를 찾지 못함.
-fault 해제 -> recovery 처리
-fault 해제 -> recovery 처리 못함
+a) fault 상태 -> recovery 처리 (정상처리)
+b) fault 상태 -> recovery 처리하지 못함.(이유 필요) QoS를 만족하는 우회 경로를 찾지 못함.
+c) fault 해제 -> recovery 처리(정상 처리) fault가 해제되었는데 경로 절체됨.  fault는 삭제 혹은 없어짐(경로복구).
+d) fault 해제 -> recovery 처리 못함 fault가 해제되었는데, 경로가 절체되지 못함.(아주 희박한 경우임)
+
+c) 상태의 경우 장애가 복구되었으므로 다시 경로를 restore 할 수 있음.
+
+현재 절체 경로가 임시 경로이므로 완벽한 경로로 이동하는 경우가 필요함. 이를 위해서 
+백업 경로로 이동한 뒤에 
+
+Primary path, secondary path.
+Primay path Protected path, Primary protecting path.
+
 
